@@ -1,0 +1,72 @@
+import random
+words = ["apple", "broth", "crave", "dance", "ghost", "house", "irony", "juice", "kings", "lucky", "morph", "novel", "ocean", "paint", "quail", "razor", "story", "throw", "upset", "venom", "water"]
+       
+which_word = random.choice(words)
+#print(which_word)   #hashtag out
+
+def absurdle(which_word):
+    guess = input("Guess the 5 letter word:")
+    #print(guess)     
+    if len(guess) == 5:
+
+        while guess != which_word:
+            if guess[0] == which_word[0]:
+                print("Right letter, right spot:", guess[0])
+            elif guess[0] in which_word and guess[0] != which_word[0]:
+                print("Right letter, wrong spot:", guess[0])
+            else:
+                print("Wrong letter, wrong spot:", guess[0])
+
+
+
+            if guess[1] == which_word[1]:
+                print("Right letter, right spot:", guess[1])
+            elif guess[1] in which_word and guess[1] != which_word[1]:
+                print("Right letter, wrong spot:", guess[1])
+            else:
+                print("Wrong letter, wrong spot:", guess[1])
+                
+
+            if guess[2] == which_word[2]:
+                print("Right letter, right spot:", guess[2])
+            elif guess[2] in which_word and guess[2] != which_word[2]:
+                print("Right letter, wrong spot:", guess[2])
+            else:
+                print("Wrong letter, wrong spot:", guess[2])
+                
+
+            if guess[3] == which_word[3]:
+                print("Right letter, right spot:", guess[3])
+            elif guess[3] in which_word and guess[3] != which_word[3]:
+                print("Right letter, wrong spot:", guess[3])
+            else:
+                print("Wrong letter, wrong spot:", guess[3])
+                
+
+            if guess[4] == which_word[4]:
+                print("Right letter, right spot:", guess[4])
+            elif guess[4] in which_word and guess[4] != which_word[4]:
+                print("Right letter, wrong spot:", guess[4])
+            else:
+                print("Wrong letter, wrong spot:", guess[4])
+
+            guess = input("Guess the 5 letter word:")
+            if len(guess) != 5:
+                print("Your guess must be contain 5 letters.")
+                guess = input("Guess a 5 letter word:")
+        print("Congrats! The word was " + which_word + ".")
+        play_again = input("Would you like to play again? Y/YES N/NO")
+        play_again = play_again.upper()
+        if play_again == "YES" or play_again =="Y":
+            which_word = random.choice(words)
+            #print(which_word)     #hashtag out
+            absurdle(which_word)
+        else:
+            print("Thanks for playing!")
+
+    else:
+        print("Your guess must contain 5 letters.")
+        absurdle(which_word)
+
+absurdle(which_word)
+
